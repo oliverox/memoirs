@@ -1,6 +1,6 @@
-Oliver's Boilerplate app
+Memoirs app
 ========================
-A boilerplate Sails application with the following architecture:
+
 
 ###Framework
 Sails.js
