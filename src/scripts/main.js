@@ -1,5 +1,10 @@
-var App = require('./app');
+/**
+ * Start Application
+ */
+
+var MemoirsApp = require('./app');
 
 console.log('---main---');
-var app = new App();
-app.startPoc();
+var app = new MemoirsApp();
+
+app.start();

@@ -14,6 +14,7 @@ var gulp            = require('gulp');
 var handleErrors    = require('../util/handleErrors');
 var source          = require('vinyl-source-stream');
 var path            = require('path');
+var reactify        = require('reactify');
 
 gulp.task('browserify', function() {
     
@@ -31,18 +32,30 @@ gulp.task('browserify', function() {
         bundleLogger.start();
 
         return bundler
-            // Enable source maps!
+            // prevent jquery & underscore from
+            // being required by exoskeleton
+            .exclude('jquery')
+            .exclude('underscore')
+
+            // compile jsx
+            .transform({}, reactify)
+
+            // Enable source maps
             .bundle({
                 debug: true
             })
+
             // Report compile errors
             .on('error', handleErrors)
+
             // Use vinyl-source-stream to make the
             // stream gulp compatible. Specifiy the
             // desired output filename here.
             .pipe(source(config.appStartFileName))
+
             // Specify the output destination
             .pipe(gulp.dest(path.join(config.buildPath, config.scriptDestPath)))
+            
             // Log when bundling completes!
             .on('end', bundleLogger.end);
     };

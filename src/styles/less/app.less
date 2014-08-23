@@ -1,5 +1,16 @@
 @import "bootstrap/bootstrap.less";
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
 a {
     color: blue;
     background-color: hotpink;
@@ -7,24 +18,36 @@ a {
 
 h1 { 
     font-weight: normal; 
-    font-size: 22px;
-    color: red;
+    font-size: 35px;
+    color: #fff;
 }
 
-section {
-    max-width: 500px;
-    border: 1px solid black;
-    color: blue;
-    position: absolute;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+#app_container {
+    width: 100%;
+    height: 100%;
 }
 
-.appendready {
-    color: lightgreen;
+.memoir_component {
+    .photo_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .photo_title {
+        -webkit-filter: blur(6px);        
+    }
+
+    .title_container {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+    }
+
+    .title {
+        position: relative;
+        width: 300px;
+        left: -50%;
+        text-align: center;
+    }
 }

@@ -1,4 +1,4 @@
 module.exports.appConfig = {
-    title: 'App Boilerplate',
+    title: 'Memoirs',
     author: 'Oliver Oxenham'
 };
