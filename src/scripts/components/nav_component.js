@@ -7,7 +7,7 @@ var React = require('react');
 var NavComponent = React.createClass({
 
     leftArrowClick: function () {
-        console.log('leftArrowClick()', this.props.length);
+        console.log('nav_component#leftArrowClick()', this.props.length);
         if (this.props.position > -1) {
             this.props.onPositionChange(this.props.position - 1);
         }
@@ -15,7 +15,7 @@ var NavComponent = React.createClass({
 
 
     rightArrowClick: function () {
-        console.log('nav_component#rightArrowClick', this.props.length);
+        console.log('nav_component#rightArrowClick()', this.props.length);
         if (this.props.position < this.props.length) {
             this.props.onPositionChange(this.props.position + 1);
         }
