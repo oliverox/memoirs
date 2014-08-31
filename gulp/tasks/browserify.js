@@ -35,7 +35,7 @@ gulp.task('browserify', function() {
             // prevent jquery & underscore from
             // being required by exoskeleton
             .exclude('jquery')
-            .exclude('underscore')
+            // .exclude('underscore')
 
             // compile jsx
             .transform({}, reactify)

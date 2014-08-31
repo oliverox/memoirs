@@ -1,10 +1,11 @@
-/**
- * Start Application
- */
+var Application = require('./application');
+var routes = require('./routes');
 
-var MemoirsApp = require('./app');
+var app = new Application({
+    
+    title: "Memoirs App",
 
-console.log('---main---');
-var app = new MemoirsApp();
+    routes: routes
+});
 
-app.start();
+console.log('app.router=', app.router);

@@ -16,7 +16,8 @@
     "exoskeleton": "^0.6.3",
     "react": "^0.11.1",
     "chaplin": "^1.0.1",
-    "reactify": "^0.14.0"
+    "reactify": "^0.14.0",
+    "velocity-animate": "^1.0.1"
   },
   "scripts": {
     "start": "node app.js",

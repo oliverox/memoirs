@@ -4,39 +4,46 @@
 
 var React = require('react');
 
+// components
+var ProgressComponent = require('./progress_component');
+var TitleComponent = require('./title_component');
+var NavComponent = require('./nav_component');
+var ContentComponent = require('./content_component');
+
 var MemoirComponent = React.createClass({
-    componentWillMount: function() {
- 
+    getInitialState: function () {
+        return {
+            position: -1
+        }
     },
-    componentWillUnmount: function() {
- 
+
+    handlePositionChange: function (position) {
+        console.log('memoir_component#handlePositionChange', position);
+        this.setState({
+            position: position
+        });
     },
+
     render: function() {
-        return (
-            <div className="memoir_component">
-                <div className="photo_container">
-                    <img className="photo_title" src="/public/images/001.jpg" width="100%"/>
-                </div>
-                <div className="title_container"><h1 className="title">The Engagement</h1></div>
+        var imgUrl;
+        var story;
+        if (this.state.position === -1) {
+            imgUrl = this.props.model.get('items')[0].imgUrl;
+            story = this.props.model.get('items')[0].story;
+        }
+        else {
+            imgUrl = this.props.model.get('items')[this.state.position].imgUrl;
+            story = this.props.model.get('items')[this.state.position].story;
+        }
+        
+        return (            
+            <div className='memoir_component'>
+                <ContentComponent imgUrl={imgUrl} story={story} position={this.state.position} />
+                <ProgressComponent length={this.props.model.get('items').length} position={this.state.position} />
+                <TitleComponent title={this.props.model.get('title')} position={this.state.position} />
+                <NavComponent position={this.state.position} length={this.props.model.get('items').length} onPositionChange={this.handlePositionChange} />
             </div>
         );
-        // if (this.props.router.current === "foo") {
-        //     return <FooComponent/>;
-        // }
-        // else if (this.props.router.current === "bar") {
-        //     return <BarComponent/>;
-        // }
-        // else if (this.props.router.current === "profile") {
-
-        //     var connect = document.querySelector(".connect");
-
-        //     return <ProfileComponent profile={profile}/>;
-        // }
-        // else {
-        //     return <div>index. <a href='/foo'>foo</a> <a href="/bar">bar</a></div>;
-        // }
-
-        // return <div/>;
     }
 });
 
