@@ -47,6 +47,21 @@ h1 {
         top: 0;
         width: 100%;
         text-align: center;
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+        -webkit-justify-content: center;
+
+        .progress_circle {
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 2px solid #fff
+        }
+
+        .progress_circle.full {
+            background-color: #fff;
+        }
     }
 
     .nav_component {
