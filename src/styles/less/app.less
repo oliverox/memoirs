@@ -18,8 +18,8 @@ a {
     background-color: hotpink;
 }
 
-h1 { 
-    font-weight: normal; 
+h1 {
+    font-weight: normal;
     font-size: 35px;
     color: #fff;
 }
@@ -31,10 +31,10 @@ h1 {
 }
 
 .animate {
-    -webkit-animation-name: translateimage; 
-    -webkit-animation-duration: 15s;
-    -webkit-animation-iteration-count: infinite; 
-    -webkit-animation-timing-function: linear;    
+    // -webkit-animation-name: translateimage;
+    // -webkit-animation-duration: 15s;
+    // -webkit-animation-iteration-count: infinite;
+    // -webkit-animation-timing-function: linear;
 }
 
 .hidden {
@@ -49,22 +49,15 @@ h1 {
 .memoir_component {
     height: 100%;
     width: 100%;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-
 
     .progress_component {
         position: absolute;
         top: 0;
         width: 100%;
-        text-align: center;
-        display: -webkit-flex;
-        -webkit-flex-direction: row;
-        -webkit-justify-content: center;
+        opacity: 0.5;
 
         .progress_circle {
+            display: inline-block;
             width: 10px;
             height: 10px;
             margin: 5px;
@@ -79,8 +72,8 @@ h1 {
 
     .nav_component {
         position: absolute;
-        width: 100%;        
-        top: 50%;
+        width: 100%;
+        top: 70%;
 
         .left_arrow {
             float: left;
@@ -92,22 +85,24 @@ h1 {
     }
 
     .title_component {
+        position: absolute;
+        top: 40%;
+        width: 100%;
         z-index: 3;
+        text-align: center;
     }
 
     .content_component {
         position: absolute;
-        max-width: 320px;       // TODO: Make max-width = device-width
+        width: 100%;
+        height: 100%;
         top: 0;
         left: 0;
-        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: scroll;
 
-        .item_container {
-            width: 100%;
+        img {
             height: 100%;
-            img {
-                height: 100%;
-            }
         }
     }
 

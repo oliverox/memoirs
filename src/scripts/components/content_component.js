@@ -9,9 +9,7 @@ var ContentComponent = React.createClass({
         var classNames = "content_component" + ((this.props.position === -1) ? " blur" : "");
         return (
             <div className={classNames}>
-                <div className="item_container animate">
-                    <img src={this.props.imgUrl} />
-                </div>
+                <img src={this.props.imgUrl} />
             </div>
         );
     }

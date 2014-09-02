@@ -14,7 +14,7 @@ var MemoirComponent = React.createClass({
     getInitialState: function () {
         return {
             position: -1
-        }
+        };
     },
 
     handlePositionChange: function (position) {
@@ -35,8 +35,8 @@ var MemoirComponent = React.createClass({
             imgUrl = this.props.model.get('items')[this.state.position].imgUrl;
             story = this.props.model.get('items')[this.state.position].story;
         }
-        
-        return (            
+
+        return (
             <div className='memoir_component'>
                 <ContentComponent imgUrl={imgUrl} story={story} position={this.state.position} />
                 <ProgressComponent length={this.props.model.get('items').length} position={this.state.position} />

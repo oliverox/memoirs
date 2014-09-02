@@ -13,7 +13,7 @@ var Application = (function() {
 
     function Application(options) {
         this.initialize(options);
-    };
+    }
 
     Application.prototype.title = '';
 
@@ -33,7 +33,7 @@ var Application = (function() {
         this.appContainerEl = document.getElementById('app_container');
 
         // initialize touch events on React components
-        React.initializeTouchEvents(true)
+        React.initializeTouchEvents(true);
 
         return this.start();
     };
@@ -66,7 +66,7 @@ var Application = (function() {
                         Backbone.history.navigate(evt.srcElement.pathname, true);
                     }
                 });
-            }            
+            }
         });
     };
 
@@ -117,7 +117,7 @@ var Application = (function() {
         React.renderComponent(<AppComponent route={route}/>, this.getAppContainerElement());
     }
     */
-    
+
 
     return Application;
 })();

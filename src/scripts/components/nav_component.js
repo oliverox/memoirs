@@ -24,16 +24,16 @@ var NavComponent = React.createClass({
     render: function() {
         var nav_buttons = [];
         if (this.props.position === -1) {
-            nav_buttons.push(<div key="left_arrow" className="left_arrow hidden" onClick={this.leftArrowClick}>left</div>);
+            nav_buttons.push(<div key="left_arrow" className="left_arrow hidden" onTouchEnd={this.leftArrowClick}>left</div>);
         }
         else {
-            nav_buttons.push(<div key="left_arrow" className="left_arrow" onClick={this.leftArrowClick}>left</div>);
+            nav_buttons.push(<div key="left_arrow" className="left_arrow" onTouchEnd={this.leftArrowClick}>left</div>);
         }
         if (this.props.position === this.props.length - 1) {
-            nav_buttons.push(<div key="right_arrow" className="right_arrow hidden" onClick={this.rightArrowClick}>right</div>);
+            nav_buttons.push(<div key="right_arrow" className="right_arrow hidden" onTouchEnd={this.rightArrowClick}>right</div>);
         }
         else {
-            nav_buttons.push(<div key="right_arrow" className="right_arrow" onClick={this.rightArrowClick}>right</div>);            
+            nav_buttons.push(<div key="right_arrow" className="right_arrow" onTouchEnd={this.rightArrowClick}>right</div>);            
         }
         return (
             <div className="nav_component">
