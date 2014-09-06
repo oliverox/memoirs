@@ -14,6 +14,7 @@ module.exports = {
     libSrcPath: path.join(__dirname, '..', 'src/lib'),
     styleSrcPath: path.join(__dirname, '..', 'src/styles'),
     imageSrcPath: path.join(__dirname, '..', 'src/images'),
+	spriteSrcFile: path.join(__dirname, '..', 'src/scripts/sprites.js'),
 
     scriptDestPath: path.join('public/scripts'),
     libDestPath: path.join('public/lib'),
