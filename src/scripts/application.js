@@ -79,6 +79,10 @@ var Application = (function() {
         this.started = true;
     };
 
+    Application.prototype.getWindowDimensions = function () {
+        console.debug(window.innerWidth);
+    };
+
     Application.prototype.renderMemoirRoute = function (args) {
         console.log('>>>> RenderMemoir Route', args);
         var route = 'memoir';
@@ -87,15 +91,22 @@ var Application = (function() {
             React.renderComponent(<FourOhFourComponent />, this.getAppContainerElement());
         }
         else {
+            this.getWindowDimensions();
             React.renderComponent(<AppComponent route={route} memoirId={memoirId}/>, this.getAppContainerElement());
         }
+    };
+
+    Application.prototype.renderComplete = function () {
+        var $visible = document.getElementsByClassName('content_component')[0];
+        var $content = document.getElementsByTagName('img')[0];
     };
 
 
     Application.prototype.home = function () {
         console.log('>>>> HOME ROUTE');
         var route = 'home';
-        React.renderComponent(<AppComponent route={route}/>, this.getAppContainerElement());
+        this.getWindowDimensions();
+        React.renderComponent(<AppComponent route={route}/>, this.getAppContainerElement(),  this.renderComplete);
     };
 
     /*

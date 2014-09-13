@@ -32,6 +32,10 @@ var AppComponent = React.createClass({
         });
     },
 
+    componentDidMount: function () {
+        console.log('>>>> AppComponent was mounted <<<<<');
+    },
+
     render: function() {
         var model = this.fetchModel();
         return <MemoirComponent memoirId={this.props.memoirId} model={model} />;
